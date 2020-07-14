@@ -19,7 +19,7 @@ part '../widget/oktoast.dart';
 
 part '../widget/container.dart';
 
-LinkedHashMap<_OKToastState, BuildContext> _contextMap = LinkedHashMap();
+LinkedHashMap<_OKToastState, BuildContext> contextMap = LinkedHashMap();
 const _defaultDuration = Duration(
   milliseconds: 2300,
 );
@@ -42,7 +42,7 @@ ToastFuture showToast(
   Duration animationDuration,
   Curve animationCurve,
 }) {
-  context ??= _contextMap.values.first;
+  context ??= contextMap.values.first;
 
   final theme = _ToastTheme.of(context);
   textStyle ??= theme.textStyle ?? TextStyle(fontSize: 15.0);
@@ -96,7 +96,7 @@ ToastFuture showToastWidget(
   Duration animationDuration,
   Curve animationCurve,
 }) {
-  context ??= _contextMap.values.first;
+  context ??= contextMap.values.first;
   OverlayEntry entry;
   ToastFuture future;
   final theme = _ToastTheme.of(context);

@@ -77,7 +77,7 @@ class _OKToastState extends State<OKToast> {
 
   @override
   void dispose() {
-    _contextMap.remove(this);
+    contextMap.remove(this);
     super.dispose();
   }
 
@@ -87,7 +87,7 @@ class _OKToastState extends State<OKToast> {
       initialEntries: [
         OverlayEntry(
           builder: (ctx) {
-            _contextMap[this] = ctx;
+            contextMap[this] = ctx;
             return widget.child;
           },
         ),
